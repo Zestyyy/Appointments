@@ -1,0 +1,14 @@
+.table-style{
+    border: 1px solid black;
+    border-collapse: collapse;
+}
+.table-style thead{
+    background-color: silver;
+    font-weight: bold;
+}
+.table-style tr:nth-child(even){
+    background-color: lightgray;
+}
+.table-style td{
+    border-left: 1px solid black;
+}

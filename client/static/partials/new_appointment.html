@@ -1,0 +1,20 @@
+<h2>New Appointment</h2>
+
+<table>
+    <tr>
+        <td>Date</td>
+        <td><input type='date' min="{{today}}" ng-model='appointment.valid_date'></td>
+        <td>Time</td>
+        <td><input type='time' min="08:00:00" max="17:00:00" ng-model='appointment.valid_time'></td>
+    </tr>
+    <tr>
+        <td>Complain: </td>
+        <td><input type='text' ng-model='appointment.complain'></td>
+        <td>(Min. 10 characters.)</td>
+    </tr>
+</table>
+
+<br>
+
+<button ng-click='add_appointment()'>Add Appointment</button>
+<a ng-href='#!/main'>Cancel</button>

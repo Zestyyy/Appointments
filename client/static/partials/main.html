@@ -1,0 +1,32 @@
+<h2>Doctor's Appointments</h2>
+<a ng-href="#!/logout">Logout</a>
+
+<br><br>
+
+Search by complain: <input ng-model='appointmentFilter.complain'>
+
+<table class='table-style'>
+    <thead>
+        <tr>
+            <td><b>Date</b></td>
+            <td><b>Time</b></td>
+            <td><b>Patient Name</b></td>
+            <td><b>Complain</b></td>
+        </tr>
+    </thead>
+    <tbody>
+        <tr ng-repeat="a in appointments | orderBy: 'valid_date' | filter:appointmentFilter">
+            <td>{{a.valid_date | date:'fullDate'}}</td>
+            <td>{{a.valid_time | date:'shortTime'}}</td>
+            <td>{{a._user.f_name}}</td>
+            <td>
+                {{a.complain}}
+                <button ng-click="remove(a._user._id, a._id)">Cancel</button>
+            </td>
+        </tr>
+    </tbody>
+</table>
+
+<hr>
+
+<button ng-click='newAppointment()'>Add New Appointment</button>
